@@ -1,0 +1,22 @@
+@import "variables";
+@import "card";
+
+body {
+  font-family: var(--font-family-main);
+
+  display: grid;
+  place-items: center;
+
+  height: 100vh;
+  background-color: var(--color-very-dark-blue);
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3vw;
+
+  width: 80vw;
+  height: 34vw;
+  max-width: 90rem;
+}

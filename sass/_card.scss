@@ -1,0 +1,157 @@
+.card {
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+
+  &__background {
+    height: 33%;
+    z-index: 1;
+    overflow: hidden;
+
+    &--user {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      position: relative;
+      overflow: hidden;
+      height: 65%;
+      background-color: var(--color-primary-blue);
+      border-bottom-left-radius: 15px;
+      border-bottom-right-radius: 15px;
+      padding: 10%;
+
+      img {
+        width: clamp(4rem, 5vw, 6vw);
+        border: 3px solid white;
+        border-radius: 100%;
+        height: auto;
+      }
+      span {
+        margin-top: 20%;
+        color: var(--color-pale-blue);
+        font-size: clamp(0.8rem, 1.2vw, 1.8vw);
+      }
+      h1 {
+        font-size: clamp(1.5rem, 2.5vw, 10vw);
+        letter-spacing: -1px;
+        font-weight: var(--font-weight-light);
+        color: var(--color-offwhite-blue);
+        max-width: 60%;
+        margin-top: 5%;
+      }
+    }
+
+    img {
+      z-index: 2;
+      position: absolute;
+      right: 1rem;
+      top: -1rem;
+      width: clamp(4.5rem, 5vw, 6vw);
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    height: calc(100% - 33% + 15%);
+    margin-top: -15%;
+    z-index: 3;
+    overflow: hidden;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    background-color: var(--color-dark-blue);
+    padding: 12%;
+
+    &--user {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 20%;
+      background-color: var(--color-dark-blue);
+      height: calc(35% + 1rem);
+      margin-top: -1rem;
+      overflow: hidden;
+      padding: 12%;
+
+      span {
+        color: var(--color-desaturated-blue);
+        font-size: calc(0.7em + 0.5vw);
+      }
+    }
+  }
+
+  &__row {
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__row:nth-child(2) {
+  }
+
+  &__activity {
+    color: var(--color-offwhite-blue);
+    font-weight: var(--font-weight-medium);
+    font-size: var(--font-size-default);
+  }
+
+  &__dots-btn {
+    width: 1.1rem;
+  }
+  &__time {
+    font-size: clamp(1.5rem, 5vw, 4.5rem);
+    color: var(--color-offwhite-blue);
+    font-weight: var(--font-weight-light);
+  }
+
+  &__time--last-week {
+    color: var(--color-pale-blue);
+    font-size: 0.9rem;
+  }
+
+  &__user {
+    grid-row: span 2;
+  }
+
+  &__work {
+    .card__background {
+      background-color: var(--color-light-red--work);
+    }
+  }
+
+  &__play {
+    .card__background {
+      background-color: var(--color-soft-blue);
+    }
+  }
+
+  &__study {
+    .card__background {
+      background-color: var(--color-light-red--study);
+    }
+  }
+
+  &__exercise {
+    .card__background {
+      background-color: var(--color-lime-green);
+    }
+  }
+
+  &__social {
+    .card__background {
+      background-color: var(--color-violet);
+    }
+  }
+
+  &__self-care {
+    .card__background {
+      background-color: var(--color-soft-orange);
+    }
+  }
+}
+
+// MISC UTILITY
+.flex {
+  display: flex;
+}
