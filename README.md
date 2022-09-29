@@ -33,7 +33,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [You can see my solution here: https://www.frontendmentor.io/solutions/used-both-grid-and-flexbox-for-layout-sass-too-0802HLTuhe]
+- Solution URL: [https://www.frontendmentor.io/solutions/used-both-grid-and-flexbox-for-layout-sass-too-0802HLTuhe]
 - Live Site URL: [https://brancog.github.io/time-tracking-dashboard/]
 
 ## My process
