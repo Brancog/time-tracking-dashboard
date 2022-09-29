@@ -17,6 +17,7 @@
   --color-desaturated-blue: rgb(111, 118, 200);
   --color-pale-blue: rgb(189, 193, 255);
   --color-offwhite-blue: rgb(236, 237, 255);
+  --transition-default: all 0.3s ease;
 }
 
 .card {
@@ -46,9 +47,9 @@
   border: 3px solid white;
   border-radius: 100%;
   height: auto;
+  margin-bottom: 15%;
 }
 .card__background--user span {
-  margin-top: 20%;
   color: var(--color-pale-blue);
   font-size: clamp(0.8rem, 1.2vw, 1.8vw);
 }
@@ -58,7 +59,6 @@
   font-weight: var(--font-weight-light);
   color: var(--color-offwhite-blue);
   max-width: 60%;
-  margin-top: 5%;
 }
 .card__background img {
   z-index: 2;
@@ -79,7 +79,12 @@
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
   background-color: var(--color-dark-blue);
-  padding: 12%;
+  padding: 10%;
+  cursor: pointer;
+  transition: var(--transition-default);
+}
+.card__content:hover {
+  filter: brightness(120%);
 }
 .card__content--user {
   display: flex;
@@ -90,11 +95,16 @@
   height: calc(35% + 1rem);
   margin-top: -1rem;
   overflow: hidden;
-  padding: 12%;
+  padding: 20% 12% 12% 12%;
 }
 .card__content--user span {
   color: var(--color-desaturated-blue);
   font-size: calc(0.7em + 0.5vw);
+  cursor: pointer;
+  transition: var(--transition-default);
+}
+.card__content--user span:hover, .card__content--user span:active {
+  color: var(--color-pale-blue);
 }
 .card__row {
   justify-content: space-between;
@@ -106,7 +116,10 @@
   font-size: var(--font-size-default);
 }
 .card__dots-btn {
-  width: 1.1rem;
+  width: 1.8rem;
+  padding: 5px;
+  z-index: 5;
+  cursor: default;
 }
 .card__time {
   font-size: clamp(1.5rem, 5vw, 4.5rem);
@@ -139,8 +152,117 @@
   background-color: var(--color-soft-orange);
 }
 
+@media (max-width: 60em) {
+  .card__content {
+    padding: 8%;
+  }
+  .card__content--user {
+    font-size: 0.9rem;
+  }
+  .card__background--user {
+    padding: 0.75rem;
+  }
+  .card__background--user span {
+    margin-top: 10%;
+  }
+  .card__background--user img {
+    margin-bottom: 8%;
+  }
+  .card__time {
+    font-size: 2.4rem;
+    line-height: 0.9;
+  }
+  .card__time--last-week {
+    font-size: 0.8rem;
+  }
+}
+@media (max-width: 47.9375em) {
+  .card__background {
+    height: 4.5rem;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  .card__background--user {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10%;
+    height: 10rem;
+    padding: 2rem 1rem;
+  }
+  .card__background--user img {
+    margin-bottom: 0;
+  }
+  .card__background--user span {
+    margin: 0;
+  }
+  .card__background--user h1 {
+    margin: 0;
+    max-width: none;
+  }
+  .card__content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 1rem;
+    height: 6rem;
+    margin-top: -2rem;
+  }
+  .card__content--user {
+    height: 5rem;
+    align-items: center;
+    padding: 0;
+    flex-direction: row;
+    gap: 15%;
+  }
+  .card__content--user span {
+    margin-top: 1rem;
+  }
+  .card__time {
+    line-height: 0.8;
+  }
+  .card__row--first {
+    grid-column: span 2;
+  }
+  .card__row--middle {
+    display: flex;
+    align-items: flex-end;
+    justify-content: start;
+  }
+  .card__row--last {
+    text-align: end;
+    display: flex;
+    align-items: flex-end;
+    justify-content: end;
+  }
+}
+@media (max-width: 24.1875em) {
+  .card__background--user {
+    gap: 4%;
+  }
+  .card__time--last-week {
+    font-size: 0.8rem;
+  }
+}
+@media (max-width: 24.1875em) {
+  .card__background--user h1 {
+    font-size: 1.3rem;
+  }
+}
 .flex {
   display: flex;
+}
+
+.brightness120 {
+  filter: brightness(120%);
+}
+
+.default-brightness {
+  filter: brightness(100%);
+}
+
+.selected {
+  color: var(--color-offwhite-blue) !important;
 }
 
 body {
@@ -158,4 +280,18 @@ body {
   width: 80vw;
   height: 34vw;
   max-width: 90rem;
+}
+
+@media (max-width: 47.9375em) {
+  body {
+    place-items: unset;
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 80%;
+    height: auto;
+    padding: 2rem 1rem;
+  }
 }

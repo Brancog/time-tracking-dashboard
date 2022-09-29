@@ -20,3 +20,21 @@ body {
   height: 34vw;
   max-width: 90rem;
 }
+
+// MOBILE VIEW
+@media (max-width: 47.9375em) {
+  body {
+    place-items: unset;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+
+    width: 80%;
+    height: auto;
+
+    padding: 2rem 1rem;
+  }
+}
